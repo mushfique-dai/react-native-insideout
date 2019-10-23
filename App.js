@@ -25,8 +25,11 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import AnimateLoadingButton from 'react-native-animate-loading-button'
 
 const App: () => React$Node = () => {
+
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -40,19 +43,26 @@ const App: () => React$Node = () => {
         }}>
           <TextInput 
             placeholder='email'
-            style={{width: 150, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2}}
+            style={{width: 300, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2}}
           />
 
           <TextInput 
             placeholder='password'
             secureTextEntry
-            style={{width: 150, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2, marginTop: 20}}
+            style={{width: 300, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2, marginTop: 20, marginBottom: 50}}
           />
           
-
-        <TouchableOpacity style={{width: 150, height: 40, alignItems: 'center', justifyContent: 'center', backgroundColor: '#2E8B57', borderRadius: 4, marginTop: 30}}>
-          <Text style={{color: '#fff'}}>Login</Text>
-        </TouchableOpacity>
+          <AnimateLoadingButton
+          width={300}
+          height={50}
+          title="Login"
+          titleFontSize={16}
+          titleColor="rgb(255,255,255)"
+          backgroundColor='#2E8B57'
+          borderRadius={4}
+          style={{marginTop: 50}}
+         
+        />
 
         </View>
       </SafeAreaView>
