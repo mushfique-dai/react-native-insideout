@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.2",
-    "react-native-animate-loading-button": "^1.0.3"
+    "react-native-animate-loading-button": "^1.0.3",
+    "react-native-paper": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.3",

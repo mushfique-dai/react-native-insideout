@@ -14,9 +14,9 @@ import {
   View,
   Text,
   StatusBar,
-  TextInput,
   TouchableOpacity
 } from 'react-native';
+import { TextInput } from 'react-native-paper'
 
 import {
   Header,
@@ -28,6 +28,11 @@ import {
 import AnimateLoadingButton from 'react-native-animate-loading-button'
 
 const App: () => React$Node = () => {
+
+  state = {
+    email: '',
+    password: ''
+  }
 
 
   return (
@@ -42,12 +47,16 @@ const App: () => React$Node = () => {
           justifyContent: 'flex-start'
         }}>
           <TextInput 
-            placeholder='email'
+           label='Email'
+           value={this.state.email}
+           onChangeText={text => this.setState({ email: text })}
             style={{width: 300, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2}}
           />
 
           <TextInput 
-            placeholder='password'
+            label='Password'
+            value={this.state.password}
+            onChangeText={text => this.setState({ password: text })}
             secureTextEntry
             style={{width: 300, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2, marginTop: 20, marginBottom: 50}}
           />
