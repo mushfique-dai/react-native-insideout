@@ -14,7 +14,8 @@ import {
   View,
   Text,
   StatusBar,
-  TextInput
+  TextInput,
+  TouchableOpacity
 } from 'react-native';
 
 import {
@@ -48,6 +49,11 @@ const App: () => React$Node = () => {
             style={{width: 150, height: 60, padding: 10, borderBottomColor: '#000', borderBottomWidth: 2, marginTop: 20}}
           />
           
+
+        <TouchableOpacity style={{width: 150, height: 40, alignItems: 'center', justifyContent: 'center', backgroundColor: '#2E8B57', borderRadius: 4, marginTop: 30}}>
+          <Text style={{color: '#fff'}}>Login</Text>
+        </TouchableOpacity>
+
         </View>
       </SafeAreaView>
     </>
