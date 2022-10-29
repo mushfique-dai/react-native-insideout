@@ -12,7 +12,7 @@ function Splash() {
   }, []);
 
   return (
-    <View>
+    <View className="flex-1 justify-center items-center">
       <Text>Splash</Text>
     </View>
   );
