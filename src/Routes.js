@@ -1,43 +1,26 @@
-import React from 'react'
-import { createStackNavigator, createAppContainer } from 'react-navigation'
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux'
-import thunk from 'redux-thunk'
-import { persistStore } from 'redux-persist'
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // SCREENS
-import Screen from './screens/splashscreen/Splashscreen'
+import SplashScreen from './screens/splash';
+import LoginScreen from './screens/login';
 
-// Redux Reducer
-import AppReducer from './state/reducers'
+// Reducer
+import {StateProvider} from './state/StateProvider';
+import reducer, { initialState } from './state/reducer';
 
-const enhancer = compose(
-  applyMiddleware(thunk)
-)
+const Stack = createNativeStackNavigator();
 
-const store = createStore(AppReducer, enhancer)
-persistStore(store, () => {})
-
-const AppNavigator = createStackNavigator(
-  {
-    Screen: Screen
-  },
-  {
-    initialRouteName: 'Screen',
-    defaultNavigationOptions: {
-      gesturesEnabled: false
-    }
-  }
-)
-
-const AppContainer = createAppContainer(AppNavigator)
-
-export default class Setup extends React.Component {
-  render () {
-    return (
-      <Provider store={store}>
-        <AppContainer />
-      </Provider>
-    )
-  }
+export default function Routes() {
+  return (
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Splash" component={SplashScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </StateProvider>
+  );
 }
