@@ -31,5 +31,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
