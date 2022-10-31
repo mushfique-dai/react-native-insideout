@@ -21,7 +21,7 @@ export default function Routes() {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}  />
           </Stack.Navigator>
         </NavigationContainer>
       </StateProvider>
